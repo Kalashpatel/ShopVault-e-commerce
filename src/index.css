@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0a0a0f;
+    color: #f0f0f8;
+  }
+
+  .dark body {
+    background-color: #0a0a0f;
+    color: #f0f0f8;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #0a0a0f; }
+  ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+}
+
+@layer components {
+  /* Auth bg glow */
+  .auth-glow-1 {
+    background: radial-gradient(circle, rgba(108,99,255,0.12) 0%, transparent 70%);
+  }
+  .auth-glow-2 {
+    background: radial-gradient(circle, rgba(255,101,132,0.08) 0%, transparent 70%);
+  }
+
+  /* Skeleton shimmer */
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .skeleton-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Nav active indicator */
+  .nav-active-bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 60%;
+    background: #6c63ff;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* Product card hover */
+  .product-img-hover {
+    transition: transform 0.3s ease;
+  }
+  .group:hover .product-img-hover {
+    transform: scale(1.06);
+  }
+
+  /* Welcome banner decoration */
+  .welcome-emoji::after {
+    content: '🛍️';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 5rem;
+    opacity: 0.2;
+  }
+}
