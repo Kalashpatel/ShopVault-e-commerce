@@ -1,4 +1,4 @@
-## Live Project Link:- https://shop-vault-e-commerce.vercel.app/login
+## Live Project Link:- https://shop-vault-e-commerce.vercel.app
 
 # ShopVault — React E-Commerce Dashboard
 
